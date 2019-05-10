@@ -18,9 +18,6 @@
 #include <TCanvas.h>
 #include <math.h>
 #include <TPaveText.h>
-#include "RooCategory.h"
-#include "RooNumIntConfig.h"
-#include "RooPlotable.h"
 #include <TUnfold.h>
 #include <TLorentzVector.h>
 #include <vector>
@@ -30,11 +27,9 @@
 #include <TEfficiency.h>
 #include <fstream>
 #include <TLegend.h>
-#include "TClonesArray.h"
-
+#include <TClonesArray.h>
 
 using namespace std;
-using namespace RooFit;
 
 class myTree {
 public :
@@ -260,9 +255,8 @@ public :
    virtual Int_t    GetEntry(Long64_t entry);
    virtual Long64_t LoadTree(Long64_t entry);
    virtual void     Init(TTree *tree);
-   // virtual void     Loop();
    virtual void     Acc();
-   // virtual void     Eff();
+   virtual void     Eff();
    virtual Bool_t   Notify();
    virtual void     Show(Long64_t entry = -1);
    virtual Bool_t   isGlobalMuonInAccept2019(TLorentzVector* Muon);
